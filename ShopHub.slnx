@@ -1,0 +1,51 @@
+<Solution>
+  <Folder Name="/aspire/">
+    <Project Path="aspire/ShopHub.AppHost/ShopHub.AppHost.csproj" />
+    <Project Path="aspire/ShopHub.ServiceDefaults/ShopHub.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/src/" />
+  <Folder Name="/src/host/">
+    <Project Path="src/host/ShopHub.Api/ShopHub.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/migration/">
+    <Project Path="src/migration/ShopHub.Migration/ShopHub.Migration.csproj" />
+  </Folder>
+  <Folder Name="/src/modules/" />
+  <Folder Name="/src/modules/Cart/">
+    <Project Path="src/modules/Cart/ShopHub.Modules.Cart/ShopHub.Modules.Cart.csproj" />
+  </Folder>
+  <Folder Name="/src/modules/Catalog/">
+    <Project Path="src/modules/Catalog/ShopHub.Modules.Catalog/ShopHub.Modules.Catalog.csproj" />
+  </Folder>
+  <Folder Name="/src/modules/Discounts/">
+    <Project Path="src/modules/Discounts/ShopHub.Modules.Discounts/ShopHub.Modules.Discounts.csproj" />
+  </Folder>
+  <Folder Name="/src/modules/Identity/">
+    <Project Path="src/modules/Identity/ShopHub.Modules.Identity/ShopHub.Modules.Identity.csproj" />
+  </Folder>
+  <Folder Name="/src/modules/Inventory/">
+    <Project Path="src/modules/Inventory/ShopHub.Modules.Inventory/ShopHub.Modules.Inventory.csproj" />
+  </Folder>
+  <Folder Name="/src/modules/Notifications/">
+    <Project Path="src/modules/Notifications/ShopHub.Modules.Notifications/ShopHub.Modules.Notifications.csproj" />
+  </Folder>
+  <Folder Name="/src/modules/Orders/">
+    <Project Path="src/modules/Orders/ShopHub.Modules.Orders/ShopHub.Modules.Orders.csproj" />
+  </Folder>
+  <Folder Name="/src/modules/Payments/">
+    <Project Path="src/modules/Payments/ShopHub.Modules.Payments/ShopHub.Modules.Payments.csproj" />
+  </Folder>
+  <Folder Name="/src/modules/Tenants/">
+    <Project Path="src/modules/Tenants/ShopHub.Modules.Tenants/ShopHub.Modules.Tenants.csproj" />
+  </Folder>
+  <Folder Name="/src/shared/">
+    <Project Path="src/shared/ShopHub.SharedKernel/ShopHub.SharedKernel.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ShopHub.Integration.Tests/ShopHub.Integration.Tests.csproj" />
+    <Project Path="tests/ShopHub.Modules.Cart.Tests/ShopHub.Modules.Cart.Tests.csproj" />
+    <Project Path="tests/ShopHub.Modules.Catalog.Tests/ShopHub.Modules.Catalog.Tests.csproj" />
+    <Project Path="tests/ShopHub.Modules.Identity.Tests/ShopHub.Modules.Identity.Tests.csproj" />
+    <Project Path="tests/ShopHub.Modules.Orders.Tests/ShopHub.Modules.Orders.Tests.csproj" />
+  </Folder>
+</Solution>

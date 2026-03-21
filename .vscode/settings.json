@@ -1,0 +1,8 @@
+﻿{
+  "editor.formatOnSave": true,
+  "dotnet.defaultSolution": "ShopHub.sln",
+  "files.exclude": {
+    "**/bin": true,
+    "**/obj": true
+  }
+}

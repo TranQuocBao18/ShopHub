@@ -1,0 +1,15 @@
+﻿bin/
+obj/
+*.user
+.vs/
+.vscode/.user
+*.nupkg
+.aspire/
+node_modules/
+dist/
+.env
+.env.local
+logs/
+*.log
+.DS_Store
+Thumbs.db
