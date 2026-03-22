@@ -3,7 +3,8 @@ var builder = DistributedApplication.CreateBuilder(args);
 // ── Infrastructure ────────────────────────────────────────
 var postgres = builder.AddPostgres("postgres")
     .WithPgAdmin()
-    .WithDataVolume("shophub-postgres-data");
+    .WithDataVolume("shophub-postgres-data")
+    .WithHostPort(5432);
 
 var db = postgres.AddDatabase("shophub");
 

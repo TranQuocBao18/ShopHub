@@ -1,30 +1,35 @@
 ﻿-- =============================================
--- Script: identity_script0002.sql
--- Description: Create users table
+-- Script: 02_identity_script0002.sql
+-- Description: Create users table (ASP.NET Core Identity)
 -- =============================================
 
 CREATE TABLE IF NOT EXISTS identity.users (
-    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    tenant_id       UUID REFERENCES tenants.tenants(id),
-    email           VARCHAR(255) NOT NULL,
-    password_hash   VARCHAR(500) NOT NULL,
-    full_name       VARCHAR(255) NOT NULL,
-    phone           VARCHAR(20),
-    avatar_url      VARCHAR(500),
-    is_active       BOOLEAN NOT NULL DEFAULT TRUE,
-    is_deleted      BOOLEAN NOT NULL DEFAULT FALSE,
-    email_verified  BOOLEAN NOT NULL DEFAULT FALSE,
-    last_login_at   TIMESTAMPTZ,
-    created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    created_by      UUID,
-    CONSTRAINT users_email_tenant_unique UNIQUE (tenant_id, email)
+    id                      UUID        NOT NULL PRIMARY KEY,
+    user_name               VARCHAR(256),
+    normalized_user_name    VARCHAR(256),
+    email                   VARCHAR(256),
+    normalized_email        VARCHAR(256),
+    email_confirmed         BOOLEAN     NOT NULL DEFAULT FALSE,
+    password_hash           TEXT,
+    security_stamp          TEXT,
+    concurrency_stamp       TEXT,
+    phone_number            VARCHAR(20),
+    phone_number_confirmed  BOOLEAN     NOT NULL DEFAULT FALSE,
+    two_factor_enabled      BOOLEAN     NOT NULL DEFAULT FALSE,
+    lockout_end             TIMESTAMPTZ,
+    lockout_enabled         BOOLEAN     NOT NULL DEFAULT FALSE,
+    access_failed_count     INTEGER     NOT NULL DEFAULT 0,
+    -- Custom columns
+    full_name               VARCHAR(255) NOT NULL DEFAULT '',
+    status                  SMALLINT     NOT NULL DEFAULT 1,
+    last_login_at           TIMESTAMPTZ,
+    created_at              TIMESTAMPTZ  NOT NULL DEFAULT NOW()
 );
 
-CREATE INDEX IF NOT EXISTS idx_users_tenant
-    ON identity.users(tenant_id)
-    WHERE is_deleted = FALSE;
+CREATE UNIQUE INDEX IF NOT EXISTS idx_users_normalized_user_name
+    ON identity.users(normalized_user_name)
+    WHERE normalized_user_name IS NOT NULL;
 
-CREATE INDEX IF NOT EXISTS idx_users_email
-    ON identity.users(email)
-    WHERE is_deleted = FALSE;
+CREATE UNIQUE INDEX IF NOT EXISTS idx_users_normalized_email
+    ON identity.users(normalized_email)
+    WHERE normalized_email IS NOT NULL;

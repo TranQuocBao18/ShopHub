@@ -1,12 +1,12 @@
 ﻿-- =============================================
--- Seed: identity_seed0001.sql
+-- Seed: 02_identity_seed0001.sql
 -- Description: Seed default roles
 -- =============================================
 
-INSERT INTO identity.roles (id, name, description, created_at)
+INSERT INTO identity.roles (id, name, normalized_name, description, created_at)
 VALUES
-    (gen_random_uuid(), 'SuperAdmin',  'Platform owner - full system access',  NOW()),
-    (gen_random_uuid(), 'TenantAdmin', 'Shop owner - full shop access',        NOW()),
-    (gen_random_uuid(), 'Staff',       'Shop staff - limited access',          NOW()),
-    (gen_random_uuid(), 'Customer',    'Customer - shopping access only',      NOW())
-ON CONFLICT (name) DO NOTHING;
+    (gen_random_uuid(), 'SuperAdmin',  'SUPERADMIN',  'Platform owner - full system access', NOW()),
+    (gen_random_uuid(), 'TenantAdmin', 'TENANTADMIN', 'Shop owner - full shop access',       NOW()),
+    (gen_random_uuid(), 'Staff',       'STAFF',       'Shop staff - limited access',         NOW()),
+    (gen_random_uuid(), 'Customer',    'CUSTOMER',    'Customer - shopping access only',      NOW())
+ON CONFLICT DO NOTHING;
