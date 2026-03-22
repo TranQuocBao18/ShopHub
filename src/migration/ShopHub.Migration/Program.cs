@@ -22,8 +22,9 @@ try
         .AddEnvironmentVariables()
         .Build();
 
-    var connectionString = configuration.GetConnectionString("DefaultConnection")
-        ?? throw new InvalidOperationException("ConnectionString 'DefaultConnection' is not configured.");
+    var connectionString = configuration.GetConnectionString("shophub")
+    ?? configuration.GetConnectionString("DefaultConnection")
+    ?? throw new InvalidOperationException("ConnectionString not found.");
 
     var runSeedData = bool.TryParse(configuration["Migration:RunSeedData"], out var seed) && seed;
 

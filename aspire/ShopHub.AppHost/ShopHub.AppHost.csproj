@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\host\ShopHub.Api\ShopHub.Api.csproj" />
+    <ProjectReference Include="..\..\src\migration\ShopHub.Migration\ShopHub.Migration.csproj" />
   </ItemGroup>
 
   <ItemGroup>
