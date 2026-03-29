@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\aspire\ShopHub.ServiceDefaults\ShopHub.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\ShopHub.Utilities\ShopHub.Utilities.csproj" />
   </ItemGroup>
 
   <ItemGroup>

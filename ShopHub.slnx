@@ -39,7 +39,12 @@
     <Project Path="src/modules/Tenants/ShopHub.Modules.Tenants/ShopHub.Modules.Tenants.csproj" />
   </Folder>
   <Folder Name="/src/shared/">
+    <Project Path="src/shared/ShopHub.Application.Shared/ShopHub.Application.Shared.csproj" />
+    <Project Path="src/shared/ShopHub.Domain.Shared/ShopHub.Domain.Shared.csproj" />
+    <Project Path="src/shared/ShopHub.EF/ShopHub.EF.csproj" />
+    <Project Path="src/shared/ShopHub.Infrastructure.Shared/ShopHub.Infrastructure.Shared.csproj" />
     <Project Path="src/shared/ShopHub.SharedKernel/ShopHub.SharedKernel.csproj" />
+    <Project Path="src/shared/ShopHub.Utilities/ShopHub.Utilities.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/ShopHub.Integration.Tests/ShopHub.Integration.Tests.csproj" />
